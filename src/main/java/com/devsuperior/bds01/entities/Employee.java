@@ -1,5 +1,7 @@
 package com.devsuperior.bds01.entities;
 
+import com.devsuperior.bds01.dto.EmployeeDTO;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -32,7 +34,13 @@ public class Employee {
 		this.department = department;
 	}
 
-	public Long getId() {
+    public Employee(EmployeeDTO dto, Department department) {
+		name = dto.getName();
+		email = dto.getEmail();
+		this.department = department;
+    }
+
+    public Long getId() {
 		return id;
 	}
 
